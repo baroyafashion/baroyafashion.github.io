@@ -54,7 +54,7 @@ nav ul {
     width: 31%;
     margin-right: -10%;
     margin-bottom: 0;
-    justify-content: space-between;
+    justify-content: space-between !important;
     list-style: none;
 }
 nav li a{
@@ -223,22 +223,22 @@ p.des {
 	overflow: hidden;
 	position: fixed;
 	bottom: 0%;
-	left: 0%;
+    left: 0%;
+    display: flex;
 	background-color: rgba(0,0,0);
 	z-index: 9999;
 	transition: 0.8s;
 	text-align: center;
-	padding: 30px 0;
 }
 .overlay:target {
 	width: auto;
 	height: auto;
 	top: 0%;
 	right: 0%;
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.9);
 }
 .overlay img {
-    max-width: 47%;
+    width: 600px;
     margin: auto;
 	background-color: white;
 	border: 1px solid black;
@@ -246,21 +246,17 @@ p.des {
 	border-radius: 5px;
     position: relative;
 }
-.overlay:target img {
-	animation: efekzoom;
-}
+.overlay:target img {animation: efekzoom;}
 .overlay .close {
 	position: absolute;
-	top: 3%;
-	right: 21%;
+	top: 5%;
+	right: 8%;
 	color: white;
     text-decoration: none;
     font-size: 2.3em;
 	opacity: 0;
 }
-.overlay:target .close {
-	animation: efekclose .5s .5s forwards;
-}
+.overlay:target .close {animation: efekclose .5s .5s forwards;}
 
 /*navigasi*/
 .prev, .next {
@@ -298,7 +294,7 @@ p.des {
     padding: 10px;
     align-items: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly !important;
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 0 3px rgba(43, 41, 41, 0.644);
@@ -350,16 +346,24 @@ footer p, footer p a{
         width: 50%;
         grid-column: 1 / -1;
     }
+    .prev {left: 7%;}
+    .next {right: 7%;}
 }
 @media only screen and (max-width: 820px) {
+    .containerr {gap: 20px;}
     .containerr .desain {width: 100%;}
     #about .containerr {
-        max-width: 450px;
+        max-width: 480px;
         margin: auto;
     }
+    .overlay .close {right: 5vh;}
+    .overlay img {width: 75%;}
+    .prev {left: 1%;}
+    .next {right: 1%;}
 }
 @media only screen and (max-width: 768px) {
     nav ul {width: 50%;}
+    /* .overlay img {top: 25%;} */
 }
 @media only screen and (max-width: 576px) {
     nav ul {
@@ -369,7 +373,7 @@ footer p, footer p a{
         width: 100%;
         right: 0;
         height: 100vh;
-        justify-content: space-evenly;
+        justify-content: space-evenly !important;
         align-items: center;
         flex-direction: column;
         background-color: rgb(180, 78, 232);
@@ -388,6 +392,7 @@ footer p, footer p a{
 }
 @media only screen and (max-width: 523px) {
     .gallery {margin: 30px 14vw 15px;}
+    footer p, footer p a{font-size: 0.7em}
 }
 
 
